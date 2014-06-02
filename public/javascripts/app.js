@@ -11,7 +11,8 @@ MZ.config(['$routeProvider', function($routeProvider) {
                 when("/blog",{ templateUrl: "public/templates/blog/list.html"}).
                 when("/user/login",{ templateUrl: "public/templates/user/login.html"}).
                 when("/products",{ templateUrl: "public/templates/product/list.html"}).
-                when("/products/:id",{ templateUrl: "public/templates/product/list.html"});
+                when("/products/:id",{ templateUrl: "public/templates/product/list.html"}).
+                otherwise({ redirectTo: "/"});
         
         
         

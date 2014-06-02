@@ -13,9 +13,11 @@
         
         <?= js(base_url("public/javascripts/angular/angular.min.js")) ?>
         <?= js(base_url("public/javascripts/angular/angular-route.min.js")) ?>
+        <?= js(base_url("public/javascripts/angular/i18n/angular-locale_el-gr.js")) ?>
         <?= js(base_url("public/javascripts/app.js")) ?>
         
         <!-- Services -->
+        <?= js(base_url("public/javascripts/services/LocalizerService.js")) ?>
         <?= js(base_url("public/javascripts/services/ApiService.js")) ?>
         <!-- Services -->
         
