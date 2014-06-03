@@ -1,7 +1,7 @@
 MZ.factory('$localizer', ['$rootScope', function($rootScope){
     
     
-    $rootScope.langId = "en";
+    $rootScope.langId = "gr";
     
     var en = {
         LOGIN : "Login",
@@ -19,7 +19,12 @@ MZ.factory('$localizer', ['$rootScope', function($rootScope){
         MY_ACCOUNT: "My Account",
         REGISTER: "Register",
         CHANGE_PASSWORD: "Change Password",
-        LOGOUT: "Logout"
+        LOGOUT: "Logout",
+        MESSAGE_101: "Invalid client",
+        MESSAGE_102: "Please log in",
+        MESSAGE_103: "Wrong username or password",
+        MESSAGE_104: "Wrong username or password",
+        MESSAGE_105: "Wrong username or password"
     };
     
     var gr = {
@@ -38,12 +43,20 @@ MZ.factory('$localizer', ['$rootScope', function($rootScope){
         MY_ACCOUNT: "Ο λογαριασμός μου",
         REGISTER: "Εγγραφή",
         CHANGE_PASSWORD: "Αλλαγή κωδικού πρόσβασης",
-        LOGOUT: "Αποσύνδεση"
+        LOGOUT: "Αποσύνδεση",
+        MESSAGE_101: "Invalid client",
+        MESSAGE_102: "Παρακαλώ συνδεθείτε",
+        MESSAGE_103: "Λάθος username ή password",
+        MESSAGE_104: "Λάθος username ή password",
+        MESSAGE_105: "Λάθος username ή password"
     };
     
     
     
     return {
+        getError: function(errorNum){
+            return this[$rootScope.langId]["MESSAGE_" + errorNum];
+        },
         get: function(val){
             return this[$rootScope.langId][val];
         },

@@ -1,7 +1,11 @@
 MZ.factory("$user", ['$rootScope','$localizer', function($rootScope, $localizer){
         
-        $rootScope.isAdmin = false;
-        $rootScope.isLoggedIn = false;
+        //$rootScope.isLoggedIn = parseInt($("#ApplicationLoggedIn").val());
+        //$rootScope.isAdmin = parseInt($("#ApplicationIsAdmin").val());
+        $rootScope.userInfo = {
+            loggedIn : parseInt($("#ApplicationLoggedIn").val()),
+            isAdmin : parseInt($("#ApplicationIsAdmin").val())
+        };
         
         return {
             SetLocale: function(langId){
