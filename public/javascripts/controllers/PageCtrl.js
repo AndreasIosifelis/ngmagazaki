@@ -1,22 +1,18 @@
-MZ.controller("PageCtrl", ['ApiService', '$scope', '$rootScope', '$routeParams', function(ApiService, $scope, $rootScope, $routeParams) {
+MZ.controller("PageCtrl", ['$api', '$scope', '$rootScope', '$routeParams', function($api, $scope, $rootScope, $routeParams) {
 
         
         var data ={
             page : $routeParams.page == undefined ? "home" : $routeParams.page
         };
         
-        console.log(data);
-        
-        ApiService.ajax(
-                "site/page",
-                data, function(data) {
+        $api.ajax("site/page", {
+            page: $routeParams.page ? $routeParams.page : "home"
+        }, 
+        function(data) {
             $rootScope.selectedPage = $routeParams.page == undefined ? "home" : $routeParams.page;
             $rootScope.pageTitle = data.page.pageTitle;
             $rootScope.pageContent = data.page.pageContent;
-            console.log(data);
         });
-
-
 
 
     }]);

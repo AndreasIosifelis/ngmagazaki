@@ -19,6 +19,10 @@ class Site_model extends CI_Model {
             "pageTitle"=> "Contact",
             "pageContent"=>"Contact Content"
         ),
+        "profile" =>array(
+            "pageTitle"=> "Profile",
+            "pageContent"=>"Profile Content"
+        )
     );
     
     public function getPage($page) {

@@ -1,4 +1,4 @@
-MZ.factory("ApiService", ["$http", function($http){
+MZ.factory("$api", ["$http", function($http){
     
     
     return {

@@ -18,8 +18,7 @@ class Site extends MZ_Controller {
         $response["json"] = $input;               
         $response["success"] = true;       
         $response["page"] = $this->Site_model->getPage($input->page);        
-        $this->response($response);      
-                
+        $this->response($response);               
     }
 
 }

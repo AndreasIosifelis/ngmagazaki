@@ -1,14 +1,20 @@
-MZ.controller("UserCtrl", ['$localizer','$rootScope','$scope', '$http', function($localizer, $rootScope, $scope, $http){
-        
-        $rootScope.isAdmin = false;
-        $rootScope.isLoggedIn = false;
-        $rootScope.langId = "gr";
-        
-        $scope.LOGIN = $localizer.get("LOGIN");
+MZ.controller("UserCtrl", ['$api','$user','$rootScope','$scope', '$http', function($api, $user, $rootScope, $scope, $http){       
+
         
         $scope.doLogin = function(){
-            alert(44);
+            $api.ajax("user/login", {
+                username: $scope.loginUsername,
+                password: $scope.loginPassword
+            }, 
+            function(data){
+                          
+            });                        
         };
+        
+        
+        
+        $scope.SetLocale = $user.SetLocale;       
+        $user.SetLocale($rootScope.langId);
         
 }]);
 
